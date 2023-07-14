@@ -9,7 +9,7 @@ instalação:
 
 Fundamentos: 
 
-SSR(Sever side rendering) vs SPA(Single Page Application) e comparações com aplicações tradicionais sem utilização do React.
+SSR(Sever side rendering) vs SPA(Single Page Application) e comparações com aplicações tradicionais sem utilização do React. Eles são Partterners de rederização.
 
 SSR => É quando o servidor recebe as informações do browser e pega o backend e frontend, rederiza tudo e envia para o browser em html.
 
@@ -18,7 +18,7 @@ SPA => É quando temos o backend que traz todas as informações em formato json
 
 **Bundlers & Compilers**
 
-Com o mundo de desenvolvimento evoluindo à todo momento, nem sempre todos os browsers conseguem acompanhar a evolução da tecnologia para dar suporte à sintaxe mais moderna.
+Com o mundo de desenvolvimento está evoluindo à todo momento, nem sempre todos os browsers conseguem acompanhar a evolução da tecnologia para dar suporte à sintaxe mais moderna.
 
 Para isso existem os compilers, como o **[babel](https://babeljs.io/)** que convertem o código moderno para uma sintaxe mais antiga que os browsers reconhecem, e os bundlers como o **[webpack](https://webpack.js.org/)** que faz um bundling de todos os arquivos da nossa aplicação de uma forma que todos os browsers reconheçam.
 
@@ -46,3 +46,9 @@ return (
 **Propriedades**
 
 Informações que podemos passar para os nossos componentes.
+
+## Styles css
+Serve para aplicarmos os styles nos componetes.
+Nunca devemos importar diretamente no index.html. 
+O estilo sempre vai partir dos arquivos jsx. 
+[**Css modules**](https://github.com/css-modules/css-moduleshttps://github.com/css-modules/css-modules) - Serve para isolar o style de um componente para não interferir em outros compenente da aplicação, garantindo que o css não afete outras partes da aplicação.  
