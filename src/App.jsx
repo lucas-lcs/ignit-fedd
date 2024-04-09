@@ -1,10 +1,11 @@
 // componente é uma função que retorna um html, por isso o arquivo é jsx(javaScript que contém html)
 
-import { Post } from "./Post";
+import { Post } from "./components/Post";
 import { Header } from "./components/Header";
+import { Sidebar } from "./components/Sidebar";
 import styles from './App.module.css'
 import "./global.css";
-import { Sidebar } from "./components/Sidebar";
+import { Commet } from "./components/Comment";
 
 
 export function App() {

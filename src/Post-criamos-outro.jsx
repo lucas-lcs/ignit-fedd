@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
 // props: { author: '', content: 'Loren ....'}
 
-export function Post(props) {
-    return (
-        <div>
-            <strong>{ props.author }</strong>
-            <p>{ props.content }</p>
+// export function Post(props) {
+//     return (
+//         <div>
+//             <strong>{ props.author }</strong>
+//             <p>{ props.content }</p>
 
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
 
 
 

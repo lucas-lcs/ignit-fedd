@@ -1,3 +1,4 @@
+import { Avatar } from './Avatar'
 import styles from './Sidebar.module.css'
 import * as Icon from '@phosphor-icons/react'
 
@@ -12,9 +13,9 @@ export function Sidebar () {
         />
 
         <div  className={styles.profile}>
-        <img
-        className={styles.avatar}
-        src="https://avatars.githubusercontent.com/u/121250838?v=4" />
+       
+        <Avatar src='https://avatars.githubusercontent.com/u/121250838?v=4'/>
+
         <strong> Lucas Alves </strong>
         <span>Web developer</span>
         </div>
