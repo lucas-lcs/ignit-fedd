@@ -8,3 +8,20 @@
     gap: 2rem;
     align-items: flex-start;
 }
+
+
+/* Reponsividade mobile */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+        /* nunca usar pixel para dar acessibilidade para o usuário ao aumentar a tela
+            Utilizar porcentagem para calcular o tamanho da fonte
+            16 -> 100%
+            14 -> x  14*100/16 = 87,5 %        
+        */
+    }
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
