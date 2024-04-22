@@ -3,8 +3,13 @@ import { Commet } from "./Comment";
 import { format, formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale/pt-BR";
 import styles from "./Post.module.css";
+import { useState } from "react";
+
+const comments = [1, 2];
 
 export function Post({ author, publishedAt, content }) {
+  const [comments, setComments] = useState([1, 2]);
+
   const publishedAtFormatted = format(publishedAt, "d 'de' LLL 'às' HH:mm'h'", {
     locale: ptBR,
   });
@@ -13,6 +18,11 @@ export function Post({ author, publishedAt, content }) {
     locale: ptBR,
     addSuffix: true,
   });
+
+  function hadleCreateNewComment() {
+    event.preventDefault();
+    setComments([...comments, comments.length + 1]);
+  }
 
   return (
     <article className={styles.post}>
@@ -45,7 +55,7 @@ export function Post({ author, publishedAt, content }) {
           <a href="#">#rocketseat</a>{" "}
         </p>
       </div>
-      <form className={styles.commentForm}>
+      <form onSubmit={hadleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
         <textarea placeholder="Deixe um comentário..." />
         <footer>
@@ -54,9 +64,9 @@ export function Post({ author, publishedAt, content }) {
       </form>
 
       <div className={styles.commentList}>
-        <Commet />
-        <Commet />
-        <Commet />
+        {comments.map((comments) => {
+          return <Commet />;
+        })}
       </div>
     </article>
   );

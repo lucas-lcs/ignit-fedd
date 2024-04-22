@@ -52,3 +52,6 @@ Serve para aplicarmos os styles nos componetes.
 Nunca devemos importar diretamente no index.html. 
 O estilo sempre vai partir dos arquivos jsx. 
 [**Css modules**](https://github.com/css-modules/css-moduleshttps://github.com/css-modules/css-modules) - Serve para isolar o style de um componente para não interferir em outros compenente da aplicação, garantindo que o css não afete outras partes da aplicação.  
+
+## States 
+React não fica ouvindo a mudança do estado de uma determinada variavel, com isso não redirecionada a mudança que aplicamos no frontend, por causa disso precisamos usar o useState, que comunica o react que algo foi alterado na variavel e será preciso alterar no frontend as alterções. 
