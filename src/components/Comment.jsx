@@ -2,7 +2,7 @@ import { Avatar } from "./Avatar";
 import styles from "./Comment.module.css";
 import * as Icon from "@phosphor-icons/react";
 
-export function Commet() {
+export function Commet({ content }) {
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src="https://avatars.githubusercontent.com/u/121250838?v=4" />
@@ -19,7 +19,7 @@ export function Commet() {
               <Icon.Trash size={24} />
             </button>
           </header>
-          <p>Muito bom Devon, parabéns!! 👏👏</p>
+          <p>{content}</p>
         </div>
         <footer>
           <button>

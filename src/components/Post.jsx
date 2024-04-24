@@ -5,10 +5,9 @@ import { ptBR } from "date-fns/locale/pt-BR";
 import styles from "./Post.module.css";
 import { useState } from "react";
 
-const comments = [1, 2];
-
 export function Post({ author, publishedAt, content }) {
-  const [comments, setComments] = useState([1, 2]);
+  const [comments, setComments] = useState(["Post muito bacana hem?!"]);
+  const [newCommentText, setNewCommentText] = useState("");
 
   const publishedAtFormatted = format(publishedAt, "d 'de' LLL 'às' HH:mm'h'", {
     locale: ptBR,
@@ -21,7 +20,12 @@ export function Post({ author, publishedAt, content }) {
 
   function hadleCreateNewComment() {
     event.preventDefault();
-    setComments([...comments, comments.length + 1]);
+    setComments([...comments, newCommentText]);
+    setNewCommentText("");
+  }
+
+  function hadleNewCommentChange() {
+    setNewCommentText(event.target.value);
   }
 
   return (
@@ -57,15 +61,20 @@ export function Post({ author, publishedAt, content }) {
       </div>
       <form onSubmit={hadleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
-        <textarea placeholder="Deixe um comentário..." />
+        <textarea
+          name="comment"
+          placeholder="Deixe um comentário..."
+          value={newCommentText}
+          onChange={hadleNewCommentChange}
+        />
         <footer>
           <button type="submit">Publicar</button>
         </footer>
       </form>
 
       <div className={styles.commentList}>
-        {comments.map((comments) => {
-          return <Commet />;
+        {comments.map((comment) => {
+          return <Commet content={comment} />;
         })}
       </div>
     </article>
